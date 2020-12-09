@@ -9,11 +9,11 @@ function ProductView({ products }) {
     const [selectedProduct, setSelectedProduct] = useState('');
 
     useEffect(() => {
-        setSideOpen(true);
+        if (selectedProduct) setSideOpen(true);
     }, [selectedProduct]);
 
     useEffect(() => {
-        setSelectedProduct();
+        if (!sideOpen) setSelectedProduct();
     }, [sideOpen])
 
     return (
